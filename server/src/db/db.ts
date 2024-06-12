@@ -11,16 +11,4 @@ const pool = new Pool ({
   port: Number(process.env.PG_PORT || 5432)
 })
 
-async function connectToPostgres() {
-  try {
-    await pool.connect()
-    console.log('Postgres connected');
-  } catch (error) {
-    console.error('Error connecting to Postgres: ', error)
-    process.exit(1)
-  }
-}
-
-connectToPostgres()
-
 export default pool
