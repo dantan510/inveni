@@ -33,19 +33,6 @@ app.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 }));
-function connectToPostgres() {
-    return __awaiter(this, void 0, void 0, function* () {
-        try {
-            yield db_1.default.connect();
-            console.log('Postgres connected');
-        }
-        catch (error) {
-            console.error('Error connecting to Postgres: ', error);
-            process.exit(1);
-        }
-    });
-}
-connectToPostgres();
 app.listen(PORT, () => {
     console.log(`Server running on ${PORT}`);
 });

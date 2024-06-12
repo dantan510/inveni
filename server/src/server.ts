@@ -23,18 +23,6 @@ app.get('/', async (req: Request, res: Response) => {
   }
 });
 
-async function connectToPostgres() {
-  try {
-    await pool.connect()
-    console.log('Postgres connected');
-  } catch (error) {
-    console.error('Error connecting to Postgres: ', error)
-    process.exit(1)
-  }
-}
-
-connectToPostgres()
-
 app.listen(PORT, () => {
   console.log(`Server running on ${PORT}`);
 });
