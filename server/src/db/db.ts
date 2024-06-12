@@ -4,11 +4,11 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 const pool = new Pool ({
-  user: String(process.env.PG_USER),
-  password: String(process.env.PG_PASS),
-  host: String(process.env.PG_HOST),
-  database: String(process.env.PG_DATABASE),
-  port: Number(process.env.PG_PORT)
+  user: String(process.env.PGUSER),
+  password: String(process.env.PGPASS),
+  host: String(process.env.PGHOST),
+  database: String(process.env.PGDATABASE),
+  port: Number(process.env.PGPORT)
 })
 
 async function connectToPostgres() {
